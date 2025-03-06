@@ -41,7 +41,7 @@ def main():
     print("But We Also Make N-Sided Pyramid Calculator Programs Too", end=" ")
     print("Since A Pyramid Is Only One Third The Volume", end=" ")
     print("Of A Prism With The Same Dimensions And Also Because", end=" ")
-    print("Pyramid Calculator Programs Lead To Higher Margins", end=" ")
+    print("Pyramid Calculator Programs Leads To Higher Margins", end=" ")
     print("Than Making Prism Calculator Programs)!", end=" ")
     print("Let's make a calculator program!")
     # INPUT

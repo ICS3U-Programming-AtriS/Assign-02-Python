@@ -75,7 +75,7 @@ def valid_input(prompt:str):
     try:
         print("\033[0m", end="") # WHITE TEXT
         res = float(input(prompt))
-        if res >= 0:
+        if res > 0:
             return res
         else:
             print("\033[0;31m", end="") # RED TEXT
