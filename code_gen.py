@@ -13,7 +13,7 @@ def get_prefix(side_amount: int):
 
 
 def volume_formula(side_amount: int, type: str):
-    # l represents baselength
+    # l represents base length
     # h represents height
     # n represents the side amount
     n = side_amount
@@ -69,12 +69,31 @@ def get_code(side_amount: int, type: str, unitType: str):
 # Calculator for the Volume and Surface Area of a
 # Regular {n}-sided polygonal {type}
 
+# function that makes sure input is a positive number
+def valid_input(prompt:str):
+  while True:
+    try:
+        print("\033[0m", end="") # WHITE TEXT
+        res = float(input(prompt))
+        if res >= 0:
+            return res
+        else:
+            print("\033[0;31m", end="") # RED TEXT
+            print("Value must be a positive number")
+    except ValueError:
+        print("\033[0;31m", end="") # RED TEXT
+        print("Value must be a positive number")
+
 def main():
+    # Welcome Message
+    print("\033[0;34m", end="") # BLUE TEXT
+    print("This program calculates the Volume and Surface area")
+    print("of a Regular {n}-sided polygonal {type}")
     # Input
     # Get side length (length of the base sides), l
-    l = float(input("Enter base length({unitType}): "))
+    l = float(valid_input("Enter base length({unitType}): "))
     # Get height, h
-    h = float(input("Enter height({unitType}): "))
+    h = float(valid_input("Enter height({unitType}): "))
 
     # Process
     # Calculate the Volume
@@ -83,6 +102,7 @@ def main():
     surface_area = {surface_area_formula(n, type)}
 
     # Output
+    print("\033[0;32m", end="") # GREEN TEXT
     print("The Volume is " + str(round(volume,2)) + "{unitType}\u00b3")
     print("The Surface Area is " + str(round(surface_area,2)) + "{unitType}\u00b2")
 
