@@ -64,7 +64,7 @@ def get_code(side_amount: int, type: str, unitType: str):
 # Calculator for the Volume and Surface Area of a
 # Regular {n}-sided polygonal {type}
 
-# function that makes sure input is a positive number
+# Function that makes sure input is a positive number
 def valid_input(prompt:str):
   while True:
     try:
@@ -86,9 +86,9 @@ def main():
     print("of a Regular {n}-sided polygonal {type}")
     # Input
     # Get side length (length of the base sides)
-    length = float(valid_input("Enter base length({unitType}): "))
+    length = valid_input("Enter base length({unitType}): ")
     # Get height
-    height = float(valid_input("Enter height({unitType}): "))
+    height = valid_input("Enter height({unitType}): ")
 
     # Process
     # Calculate the Area of the Base [Used for simplifying calculations]

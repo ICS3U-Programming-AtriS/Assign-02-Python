@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 # Created By: Atri Sarker
 # Date: March 3, 2025
-# DESCRIPTION HERE
+# Main file for the Calculator Calculator
 import code_gen
 import output_handler
 
 
+# Input Validation
 def int_input(prompt: str, minimum=0):
+    # Keep Looping until input is valid
     while True:
         try:
             print("\033[0m", end="")  # WHITE TEXT
@@ -52,7 +54,7 @@ def main():
     # Ask User for the unit Type [It can be anything]
     unit_type = input("Units? (cm,km,mm,etc.): ")
 
-    # Generating the code
+    # Generate the code
     generated_code = code_gen.get_code(side_amount, shape_type, unit_type)
 
     # OUTPUT
