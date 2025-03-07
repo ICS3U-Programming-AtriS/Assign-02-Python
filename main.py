@@ -6,28 +6,36 @@ import code_gen
 import output_handler
 
 
-# Input Validation
+# Input Validation function for integers
 def int_input(prompt: str, minimum=0):
     # Keep Looping until input is valid
     while True:
         try:
             print("\033[0m", end="")  # WHITE TEXT
+            # Get user's input
             res = int(input(prompt))
+            # Check if the user's input meets the minimum requirement
             if res >= minimum:
+                # Return the user's input
                 return res
             else:
                 print("\033[0;31m", end="")  # RED TEXT
                 print(f"Value must be greater than or equal to than {minimum}")
         except ValueError:
+            # ValueError occurs whenever user does not enter an integer
             print("\033[0;31m", end="")  # RED TEXT
             print("Value must be a positive integer")
 
 
+# Input Validation function for getting the shape type
 def get_shape_type(prompt: str, options):
     while True:
         print("\033[0m", end="")  # WHITE TEXT
+        # Get the user's input
         res = input(prompt)
+        # Check if input is a valid option
         if res.lower() in options:
+            # return user's input in the proper format
             return res.capitalize()
         else:
             print("\033[0;31m", end="")  # RED TEXT
@@ -43,7 +51,7 @@ def main():
     print("But We Also Make N-Sided Pyramid Calculator Programs Too", end=" ")
     print("Since A Pyramid Is Only One Third The Volume", end=" ")
     print("Of A Prism With The Same Dimensions", end=" ")
-    print("Also Because Making", end=" ")
+    print("And Also Because Making", end=" ")
     print("Pyramid Calculator Programs Leads To Higher Margins", end=" ")
     print("Than Making Prism Calculator Programs)!", end=" ")
     print("Let's make a calculator program!")
@@ -58,8 +66,9 @@ def main():
     # Generate the code
     generated_code = code_gen.get_code(side_amount, shape_type, unit_type)
 
-    # OUTPUT
+    # OUTPUT [writes generated code to file]
     output_handler.addCodeToFile(generated_code)
+    # End of Program
     print("DONE!")
 
 

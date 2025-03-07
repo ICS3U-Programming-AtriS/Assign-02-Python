@@ -10,13 +10,17 @@ import math
 def volume_formula(type: str):
     # length represents base length
     # height represents height
+    # Initialize variable to hold the formula
     full_formula = ""
+    # base is represented in the generated program as base_area
     base = f"base_area"
+    # Match shape with the proper formula
     if type == "Prism":
         full_formula = f"({base}) * height"
     elif type == "Pyramid":
         full_formula = f"({base}) * (height/3)"
 
+    # Return the formula
     return full_formula
 
 
@@ -25,8 +29,11 @@ def surface_area_formula(side_amount: int, type: str):
     # height represents height
     # n represents the side amount
     n = side_amount
+    # Initialize variable to hold the formula
     full_formula = ""
+    # base is represented in the generated program as base_area
     base = "base_area"
+    # Match shape with the proper formula
     if type == "Prism":
         full_formula = f"2*({base}) + (length*{n}*height)"
     elif type == "Pyramid":
@@ -35,6 +42,7 @@ def surface_area_formula(side_amount: int, type: str):
         )
         full_formula = f"({base}) + (length*{n*0.5}*({slant_formula}))"
 
+    # Return the formula
     return full_formula
 
 
@@ -43,8 +51,8 @@ def get_code(side_amount: int, type: str, unitType: str):
     # Get Date
     today = datetime.today()
     month = [
-        "Jan",
-        "Feb",
+        "January",
+        "February",
         "March",
         "April",
         "May",
