@@ -171,4 +171,4 @@ cython_debug/
 .pypirc
 
 # For Output Files
-*.output_code
+/OUTPUT/output_code.py

@@ -68,20 +68,20 @@ def get_code(side_amount: int, type: str, unitType: str):
 def valid_input(prompt:str):
   while True:
     try:
-        print("\033[0m", end="") # WHITE TEXT
+        print("\\033[0m", end="") # WHITE TEXT
         res = float(input(prompt))
         if res > 0:
             return res
         else:
-            print("\033[0;31m", end="") # RED TEXT
+            print("\\033[0;31m", end="") # RED TEXT
             print("Value must be a positive number")
     except ValueError:
-        print("\033[0;31m", end="") # RED TEXT
+        print("\\033[0;31m", end="") # RED TEXT
         print("Value must be a positive number")
 
 def main():
     # Welcome Message
-    print("\033[0;34m", end="") # BLUE TEXT
+    print("\\033[0;34m", end="") # BLUE TEXT
     print("This program calculates the Volume and Surface area")
     print("of a Regular {n}-sided polygonal {type}")
     # Input
@@ -99,7 +99,7 @@ def main():
     surface_area = {surface_area_formula(n, type)}
 
     # Output
-    print("\033[0;32m", end="") # GREEN TEXT
+    print("\\033[0;32m", end="") # GREEN TEXT
     print("The Volume is " + str(round(volume,2)) + "{unitType}\u00b3")
     print("The Surface Area is " + str(round(surface_area,2)) + "{unitType}\u00b2")
 
