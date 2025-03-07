@@ -79,6 +79,7 @@ def valid_input(prompt:str):
         print("\\033[0;31m", end="") # RED TEXT
         print("Value must be a positive number")
 
+        
 def main():
     # Welcome Message
     print("\\033[0;34m", end="") # BLUE TEXT
@@ -103,6 +104,7 @@ def main():
     print("The Volume is " + str(round(volume,2)) + "{unitType}\u00b3")
     print("The Surface Area is " + str(round(surface_area,2)) + "{unitType}\u00b2")
 
+    
 if __name__ == "__main__":
     main()
 
