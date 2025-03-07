@@ -7,38 +7,33 @@ from datetime import datetime
 import math
 
 
-# I will do this later
-def get_prefix(side_amount: int):
-    pass
-
-
-def volume_formula(side_amount: int, type: str):
-    # l represents base length
-    # h represents height
-    # n represents the side amount
-    n = side_amount
+def volume_formula(type: str):
+    # length represents base length
+    # height represents height
     full_formula = ""
-    base_formula = f"{n} * (1/4) * (l**2) * {math.tan((0.5 - 1/n)*math.pi)}"
+    base = f"base_area"
     if type == "Prism":
-        full_formula = f"({base_formula}) * h"
+        full_formula = f"({base}) * height"
     elif type == "Pyramid":
-        full_formula = f"({base_formula}) * (h/3)"
+        full_formula = f"({base}) * (height/3)"
 
     return full_formula
 
 
 def surface_area_formula(side_amount: int, type: str):
-    # l represents base length
-    # h represents height
+    # length represents base length
+    # height represents height
     # n represents the side amount
     n = side_amount
     full_formula = ""
-    base_formula = f"{n} * (1/4) * (l**2) * {math.tan((0.5 - 1/n)*math.pi)}"
+    base = "base_area"
     if type == "Prism":
-        full_formula = f"2*({base_formula}) + (l*{n}*h)"
+        full_formula = f"2*({base}) + (length*{n}*height)"
     elif type == "Pyramid":
-        slant_formula = f"(h**2 + ( (l/2)*{(math.tan((0.5 - 1/n)*math.pi))} )**2)**0.5"
-        full_formula = f"({base_formula}) + (l*{n}*({slant_formula})*0.5)"
+        slant_formula = (
+            f"(height**2 + ( (length/2)*{(math.tan((0.5 - 1/n)*math.pi))} )**2)**0.5"
+        )
+        full_formula = f"({base}) + (length*{n*0.5}*({slant_formula}))"
 
     return full_formula
 
@@ -90,14 +85,16 @@ def main():
     print("This program calculates the Volume and Surface area")
     print("of a Regular {n}-sided polygonal {type}")
     # Input
-    # Get side length (length of the base sides), l
-    l = float(valid_input("Enter base length({unitType}): "))
-    # Get height, h
-    h = float(valid_input("Enter height({unitType}): "))
+    # Get side length (length of the base sides)
+    length = float(valid_input("Enter base length({unitType}): "))
+    # Get height
+    height = float(valid_input("Enter height({unitType}): "))
 
     # Process
+    # Calculate the Area of the Base [Used for simplifying calculations]
+    base_area = {n} * (1/4) * (length**2) * {math.tan((0.5 - 1/n)*math.pi)}
     # Calculate the Volume
-    volume = {volume_formula(n, type)}
+    volume = {volume_formula(type)}
     # Calculate the Surface Area
     surface_area = {surface_area_formula(n, type)}
 
