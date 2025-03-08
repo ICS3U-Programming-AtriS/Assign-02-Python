@@ -111,9 +111,9 @@ def main():
 
     # Output
     print("\\033[0;32m", end="")  # GREEN TEXT
-    print("The Volume is " + str(round(volume,2)) + "{unitType}\u00b3")
+    print("The Volume is " + str(round(volume,2)) + "{unitType}\\u00b3")
     print("The Surface Area is " + str(round(surface_area,2)), end="")
-    print("{unitType}\u00b3")
+    print("{unitType}\\u00b2")
 
     
 if __name__ == "__main__":
