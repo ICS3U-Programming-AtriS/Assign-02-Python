@@ -28,7 +28,7 @@ def int_input(prompt: str, minimum=0):
 
 
 # Input Validation function for getting the shape type
-def get_shape_type(prompt: str, options):
+def get_shape(prompt: str, options):
     while True:
         print("\033[0m", end="")  # WHITE TEXT
         # Get the user's input
@@ -59,7 +59,7 @@ def main():
     # Ask User for amount of sides in the base
     side_amount = int_input("Enter the amount of sides in the base: ", 3)
     # Ask User for type of shape (prism/pyramid)
-    shape_type = get_shape_type("Type? (Prism/Pyramid): ", ["prism", "pyramid"])
+    shape_type = get_shape("Type? (Prism/Pyramid): ", ["prism", "pyramid"])
     # Ask User for the unit Type [It can be anything]
     unit_type = input("Units? (cm,km,mm,etc.): ")
 

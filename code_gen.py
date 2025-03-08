@@ -38,7 +38,8 @@ def surface_area_formula(side_amount: int, type: str):
         full_formula = f"2*({base}) + (length*{n}*height)"
     elif type == "Pyramid":
         slant_formula = (
-            f"(height**2 + ( (length/2)*{(math.tan((0.5 - 1/n)*math.pi))} )**2)**0.5"
+            f"(height**2 + ( (length/2)*{(math.tan((0.5 - 1/n)*math.pi))} )"
+            + "**2)**0.5"
         )
         full_formula = f"({base}) + (length*{n*0.5}*({slant_formula}))"
 
@@ -111,7 +112,8 @@ def main():
     # Output
     print("\\033[0;32m", end="")  # GREEN TEXT
     print("The Volume is " + str(round(volume,2)) + "{unitType}\u00b3")
-    print("The Surface Area is " + str(round(surface_area,2)) + "{unitType}\u00b2")
+    print("The Surface Area is " + str(round(surface_area,2)), end="")
+    print("{unitType}\u00b3")
 
     
 if __name__ == "__main__":
